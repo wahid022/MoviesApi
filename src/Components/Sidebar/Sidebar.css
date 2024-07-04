@@ -1,0 +1,6 @@
+.li-container ul li::before {
+    content: "📌";
+    display: inline-block;
+    margin-right: 0.2rem;
+  }
+  

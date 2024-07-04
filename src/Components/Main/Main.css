@@ -1,0 +1,55 @@
+.form-control {
+    width:20%;
+}
+
+
+
+img{
+    height: 160px;
+
+}
+
+
+
+.badge {
+    color: red;
+    font-size: large;
+}
+
+.list-group-item
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.border-button{
+    border: solid 2px #0C1027;
+    
+    
+}
+.border-button:hover { 
+    
+    /* border-width: 2px;  */
+    border: solid 2px whitesmoke;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+/* .border-button img:hover{
+    box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 0.2);
+} */
+
+.s-left{
+    padding-left: 92px;
+}
+
+
+li i{
+    font-size: 20px;
+    margin-left: 9px;
+    margin-top: 5px;
+    color: white;
+}

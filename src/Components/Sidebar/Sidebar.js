@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './Sidebar.js';
 
 
 
 export default function Sidebar(props) {
 
-  // const[Species,setSpecies]=useState([]);
-  // const[Gender,setGender]=useState([]);
-  // const[Origin,setOrigin]=useState([]);
+  const[Species,setSpecies]=useState([]);
+  const[Gender,setGender]=useState([]);
+  const[Origin,setOrigin]=useState([]);
 
 
 
@@ -17,9 +17,6 @@ export default function Sidebar(props) {
     array.forEach(value => map.set(value, value));
     return [...map.values()];
   };
-
-
-
 
 
  //Fetching Species ..... 
@@ -36,7 +33,7 @@ export default function Sidebar(props) {
   const uniqueSpeciesArray = uniqueValues(SpeciesArray);
 
   // setSpecies(uniqueSpeciesArray);
-  console.log('Unique Species Array...',uniqueSpeciesArray);
+  // console.log('Unique Species Array...',uniqueSpeciesArray);
 
 
 
@@ -51,7 +48,7 @@ export default function Sidebar(props) {
   const uniqueGenderArray = uniqueValues(GenderArray);
   // setGender(uniqueGenderArray);
 
-  console.log('Unique Gender Array...',uniqueGenderArray);
+  // console.log('Unique Gender Array...',uniqueGenderArray);
 
 
 
@@ -64,7 +61,6 @@ export default function Sidebar(props) {
       newArr.push(temp.origin);
   });
 
-
   const OriginArray =newArr.map(function(element){
     return element.name;
   });
@@ -72,11 +68,21 @@ export default function Sidebar(props) {
   const uniqueOriginArray = uniqueValues(OriginArray);
   // setOrigin(uniqueOriginArray);
 
+  //Not setting the state without useeffect becuase it will run the infinite loops ..
 
-  console.log('Unique Origin Array...',uniqueOriginArray);
 
 
-  
+  useEffect(() => {
+    setSpecies(uniqueSpeciesArray);
+    setGender(uniqueGenderArray);
+    setOrigin(uniqueOriginArray);
+
+ }, [])
+
+
+ console.log('Species Array',Species);
+ console.log('Gender Array',Gender);
+ console.log('Origin Array',Origin);
 
 
 
